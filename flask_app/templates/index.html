@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>图书馆示例</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>图书馆管理示例</h1>
+
+      <div id="message" class="message" style="display:block"></div>
+
+      <div class="card">
+        <h3>读者管理</h3>
+        <form id="formAddReader" class="form-row">
+          <input name="name" placeholder="姓名" required>
+          <input name="age" placeholder="年龄" style="width:80px" type="number" min="1">
+          <input name="organization" placeholder="单位">
+          <button class="btn" type="submit">添加读者</button>
+        </form>
+        <div id="readerMsg" class="small" style="color:#b02a37"></div>
+        <div class="small">点击“选择”可把该读者填入借书表单</div>
+        <table class="table"><thead><tr><th>ID</th><th>姓名</th><th>单位</th><th>年龄</th><th>操作</th></tr></thead><tbody id="readersBody"></tbody></table>
+      </div>
+
+      <div class="card">
+        <h3>图书管理</h3>
+        <form id="formAddBook" class="form-row">
+          <input name="title" placeholder="书名" required>
+          <input name="author" placeholder="作者">
+          <input name="total_copies" placeholder="库存" style="width:80px" value="1" type="number" min="1">
+          <input name="available_copies" placeholder="可借数" style="width:80px" value="1" type="number" min="0">
+          <button class="btn" type="submit">添加图书</button>
+        </form>
+        <div id="bookMsg" class="small" style="color:#b02a37"></div>
+        <div class="small">点击“选择”可把该图书填入借书表单；不可借的图书将被禁用</div>
+        <table class="table"><thead><tr><th>ID</th><th>书名</th><th>作者</th><th>可借</th><th>操作</th></tr></thead><tbody id="booksBody"></tbody></table>
+      </div>
+
+      <div class="card">
+        <h3>借书</h3>
+        <form id="formBorrow" class="form-row">
+          <select id="borrowReader" name="reader_id"></select>
+          <select id="borrowBook" name="book_id"></select>
+          <input type="date" name="due_date" required>
+          <button class="btn" type="submit">借书</button>
+        </form>
+        <div id="borrowMsg" class="small" style="color:#b02a37"></div>
+      </div>
+
+      <div class="card">
+        <h3>还书</h3>
+        <form id="formReturn" class="form-row">
+          <input name="loan_id" placeholder="借阅编号 (loan_id)" required type="number" min="1">
+          <input type="date" name="return_date" required>
+          <button class="btn" type="submit">还书</button>
+        </form>
+        <div id="returnMsg" class="small" style="color:#b02a37"></div>
+      </div>
+
+      <div class="card">
+        <h3>借阅记录</h3>
+        <button class="btn secondary" onclick="fetchLoans()">刷新借阅记录</button>
+        <table class="table"><thead><tr><th>Loan ID</th><th>书名</th><th>读者</th><th>状态</th><th>借出</th><th>应还</th><th>归还</th><th>罚金</th></tr></thead><tbody id="loansBody"></tbody></table>
+      </div>
+
+      <div class="footer">示例项目 — 可扩展为更完整的图书馆系统</div>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+body{font-family:Segoe UI, Roboto, Arial, sans-serif;margin:20px;background:#f7f9fc;color:#222}
+.container{max-width:1100px;margin:0 auto}
+h1{color:#0b5ed7}
+.card{background:#fff;border:1px solid #e6e9ef;border-radius:6px;padding:16px;margin-bottom:16px;box-shadow:0 1px 3px rgba(16,24,40,0.03)}
+.form-row{display:flex;gap:8px;align-items:center}
+.form-row input, .form-row select{padding:6px 8px;border:1px solid #ccd0db;border-radius:4px}
+.btn{background:#0b5ed7;color:#fff;padding:8px 12px;border-radius:4px;border:none;cursor:pointer}
+.btn.secondary{background:#6c757d}
+.table{width:100%;border-collapse:collapse;margin-top:8px}
+.table th, .table td{padding:8px;border-bottom:1px solid #eef2f7;text-align:left}
+.notice{padding:8px;background:#e8f7ff;border-left:4px solid #0b5ed7;margin-bottom:12px}
+.small{font-size:0.9em;color:#555}
+.footer{margin-top:24px;color:#666;font-size:0.9em;text-align:center}
+.message{margin:8px 0;padding:8px;border-radius:4px}
+.message.error{background:#ffe9e9;border:1px solid #f5c2c2}
+.message.success{background:#e6f7ea;border:1px solid #b7ebc6}
